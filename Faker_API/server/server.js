@@ -42,9 +42,10 @@ app.get("/api/companies/new", (req, res) => {
 })
 
 app.get("/api/user/company", (req, res) => {
-    const newCompany = new Company()
-    const newUser = new User()
-    res.json([newCompany, newUser])
+    res.json({
+        company : new Company(),
+        user : new User()
+    })
 })
 
 app.listen(8000, ()=>console.log("Listening to port : 8000")) 
